@@ -18,16 +18,53 @@ SQL = Structured Query Language
 es un identificador para el dato. Nos sirve para relacionar tablas.
 -Fila = Registro.
 
-Relaciones en BD Relacional: se trata del enlace que puede haber en dos (o más tablas)  donde la clave principal 
-de una tabla se asocia con la clave externa de otra tabla utilizando las relaciones de la base de datos.
-La cardinalidad es una restricción en una relación que especifica el número de instancias 
-de entidad que una entidad específica puede estar relacionada a través de la relación.
+Relaciones en BD Relacional: se trata del enlace que puede haber en dos (o más) tablas  donde la clave principal 
+de una se asocia con la clave externa de otra utilizando las relaciones de la base de datos.
+Las relaciones se representan con un rombo, dentro se utiliza normalmente un verbo que une a ambas tablas.
 
-Las tres clasificaciones de relaciones son: uno a uno, uno a muchos y muchos a muchos o muchos a uno.
-Uno a Uno: Una entidad del conjunto de entidades A puede asociarse con a lo sumo una entidad del conjunto de entidades B y viceversa.
-Uno a muchos: Una entidad del conjunto de entidades A puede asociarse con más de una entidad del conjunto de entidades B, sin embargo, una entidad del conjunto de entidades B puede asociarse con, como máximo,a una entidad.
-Muchos a muchos: Las relaciones de muchos a muchos tienen "muchos" especificados para ambas cardinalidades.
-Muchos a uno: Más de una entidad del conjunto de entidades A puede asociarse como máximo con una entidad del conjunto de entidades B, sin embargo, una entidad del conjunto de entidades B puede asociarse con más de una entidad del conjunto de entidades A.
+|       |       -----       |      |    TIENE sería la relación.
+| DUEÑO | >---< TIENE >---< | AUTO |    DUEÑO y AUTO son las entidades.
+|       |       -----       |      |    
+
+ENTIDAD: representación de algo de la vida real. Estas se grafican con un cuadrado/rectangulo.
+Las entidades poseen ATRIBUTOS, estos son las características de estas. Se reprentan con ovalos.
+Los atributos que poseen otros atributos se denominan compuestos.
+
+Cuando un atributo esta graficado con:
+-Doble ovalo: es un atributo multivaluado (puede haber más de un mismo atributo).
+-Subrayado: primary key.
+-Intervalos de lineas: los atributos derivados se calculan o derivan de otro atributo, 
+                       por ejemplo, la edad se calcula a partir de la fecha de nacimiento.
+
+
+
+La cardinalidad es una restricción en una relación que especifica el número de instancias 
+de entidad que una específica puede estar relacionada.
+
+-Las tres clasificaciones de cardinalidad son: uno a uno, uno a muchos y muchos a muchos o muchos a uno.
+--Uno a Uno: Una entidad del conjunto de entidades A puede asociarse con a lo sumo una entidad del conjunto de entidades B y viceversa.
+    Se representa:
+
+|       |        -----        |      |             |       |         -----         |      |
+| DUEÑO | -|---< TIENE >---|- | AUTO | ,o también, | DUEÑO | -||---< TIENE >---||- | AUTO |
+|       |        -----        |      |             |       |         -----         |      |
+
+--Cero a Uno (algunos la denominan como 1 a 1 opcional): cuando esta la posibilidad que uno de los lados no esté.
+    Se representa igual que el de 1 a 1 pero con las lineas punteadas.
+
+--Uno a muchos (1 a N): Una entidad del conjunto de entidades A puede asociarse con más de una entidad del conjunto de entidades B, sin embargo, una entidad del conjunto de entidades B puede asociarse con, como máximo,a una entidad.
+    Se reprentan:
+
+|       |        -----        |      |             |       |         -----         |      |
+| DUEÑO | -|---< TIENE >---<- | AUTO | ,o también, | DUEÑO | -||---< TIENE >---|<- | AUTO | , el |< significa que puede haber 1 o muchos.
+|       |        -----        |      |             |       |         -----         |      |
+
+--Muchos a muchos (N a N): Cuando en una tabla A puede estar conectado con muchos de la tabla B, y viceversa.
+
+|       |        -----        |      |             |       |         -----         |      |
+| DUEÑO | ->---< TIENE >---<- | AUTO | ,o también, | DUEÑO | ->|---< TIENE >---|<- | AUTO |
+|       |        -----        |      |             |       |         -----         |      |
+
 
 -Las Columnas ID (las columnas que tengas las id's de los registros), se le dicen Primary Key. 
 -Cuando en la tabla B hay una columna con la Id de registros de A (para relacionar ambas tablas), estas id se le 
