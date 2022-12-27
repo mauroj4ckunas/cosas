@@ -30,12 +30,22 @@ ENTIDAD: representación de algo de la vida real. Estas se grafican con un cuadr
 Las entidades poseen ATRIBUTOS, estos son las características de estas. Se reprentan con ovalos.
 Los atributos que poseen otros atributos se denominan compuestos.
 
+Entidad Fuerte: puede existir por si solo.
+Entidad Débil: no pueden existir sin una entidad fuerte. Se representan con un cuadro pero con doble linea.
+Cada una de ellas tendrá su propia primary key.
+Ejemplo: Entidad Fuerte -> Libro - 1
+         Entidad Débil  -> Ejemplar - 3
+         En una biblioteca no se puede tener un ejemplar sin tener el libro del mismo.
+         Del libro 1 habrá 3 ejemplares
+Las entidades débiles y fuertes se relacionan a través de las Foreign Key.
+
+DIAGRAMA ER (ENTIDAD-RELACIÓN):
+
 Cuando un atributo esta graficado con:
 -Doble ovalo: es un atributo multivaluado (puede haber más de un mismo atributo).
 -Subrayado: primary key.
 -Intervalos de lineas: los atributos derivados se calculan o derivan de otro atributo, 
                        por ejemplo, la edad se calcula a partir de la fecha de nacimiento.
-
 
 
 La cardinalidad es una restricción en una relación que especifica el número de instancias 
@@ -65,6 +75,7 @@ de entidad que una específica puede estar relacionada.
 | DUEÑO | ->---< TIENE >---<- | AUTO | ,o también, | DUEÑO | ->|---< TIENE >---|<- | AUTO |
 |       |        -----        |      |             |       |         -----         |      |
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 -Las Columnas ID (las columnas que tengas las id's de los registros), se le dicen Primary Key. 
 -Cuando en la tabla B hay una columna con la Id de registros de A (para relacionar ambas tablas), estas id se le 
