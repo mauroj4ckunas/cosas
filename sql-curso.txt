@@ -145,7 +145,6 @@ Estructura de una query básica:
     ORDER BY `columna que se tenga que ordenar´ DESC/ASC
     HAVING `condicion´ 
 
-
 Sentencia JOIN: Unificar tablas, a través de las claves foráneas.
     Tenemos la tabla A y B. Su intersección es la conexión realizada por la Foreign Key.
     LEFT JOIN -> A - B: trae todos los datos de A y la intersección con B.
@@ -154,9 +153,12 @@ Sentencia JOIN: Unificar tablas, a través de las claves foráneas.
  
 UNION: unificar ambas tablas, la suma.
 
+Valores Nulos y No Nulos:
+    NULL representa un espacio de la tabla de datos donde no hay un dato, es el vacío.
+    Con WHERE se verifica si un espacio está vacío o no así:
+        WHERE `columna´ IS NULL -> con esta sentencia nos trae los registros vacíos.
+        WHERE `columna´ IS NOT NULL -> con esta sentencia nos trae los registros no vacíos.
+
 -ETL: La palabra ETL correspondería al acrónimo de: Extract (Extraer), Transform (Transformar), Load (Cargar).
 ETL hace parte del proceso de integración de datos, mas aun es un componente muy importante que completa el resultado final en la relación
 de aplicaciones y sistemas.
-
----------------------------------------------------------------------------------------------------------------------------------------
->>>>>>> 3f03eb1fd15981bebe9ed0fe4e74540c6a1a728f
