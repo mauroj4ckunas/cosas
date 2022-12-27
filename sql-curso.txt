@@ -3,33 +3,8 @@
 --Nos Facilitan la conección con los lenguajes de programación (php, python, js, etc).
 
 -El CRUD (Create, Read, Update, Delete) son las operaciones que se pueden realizar con los RDM.
--QUERY = Consulta / Petición -> Son aquellos 'pedidos' de datos realizados en los lenguajes hacia los RDM para hacer
-las operaciones queridas.
-Las consultas en una base de datos juegan un papel muy fundamental, puesto que facilitan de manera considerable los procesos en cualquier empresa.
-Estructura de una query básica: 
-    SELECT `columnas o funciones como COUNT, SUM, MAX, MIN´ FROM `table´
-    WHERE `condicion´
-    GROUP BY `columna que se necesite agrupar´
-    ORDER BY `columna que se tenga que ordenar´ DESC/ASC
-    HAVING `condicion´ 
 
--ETL: La palabra ETL correspondería al acrónimo de: Extract (Extraer), Transform (Transformar), Load (Cargar).
-ETL hace parte del proceso de integración de datos, mas aun es un componente muy importante que completa el resultado final en la relación
-de aplicaciones y sistemas.
-
-
-
--SQL -> Relacional. Se representan con tablas (columnas y filas). Usadas para almacenar datos organizados. Estas tablas se relacionan entre sí
-a partir de keys.
-
--NoSQL -> No Relacional. Son representados de diferentes formas (key-value, json, etc). Usados para almacenar datos que no requieren relacionarse,
-básicamente serían como un cajón donde solo se guardan los  datos y no se necesitan un orden. Son más flexibles, escalables y mayor rendimiento que 
-las relacionales (esto se debe a que las relacionales pesan más debido a las diferentes tablas que puede llegar a haber).
-
-SQL = Structured Query Language
--Columna ID: el id es un número único generado automaticamente (autoincremental) para cada dato que se agrega a la tabla de datos, 
-es un identificador para el dato. Nos sirve para relacionar tablas.
--Fila = Registro.
+---------------------------------------------------------------------------------------------------------------------------------------
 
 Relaciones en BD Relacional: se trata del enlace que puede haber en dos (o más) tablas  donde la clave principal 
 de una se asocia con la clave externa de otra utilizando las relaciones de la base de datos.
@@ -68,9 +43,9 @@ de entidad que una específica puede estar relacionada.
 --Uno a Uno: Una entidad del conjunto de entidades A puede asociarse con a lo sumo una entidad del conjunto de entidades B y viceversa.
     Se representa:
 
-|       |        -----        |      |             |       |         -----         |      |
-| DUEÑO | -|---< TIENE >---|- | AUTO | ,o también, | DUEÑO | -||---< TIENE >---||- | AUTO |
-|       |        -----        |      |             |       |         -----         |      |
+|       |        -----        |      |              |       |         -----         |      |
+| DUEÑO | -|---< TIENE >---|- | AUTO | , o también, | DUEÑO | -||---< TIENE >---||- | AUTO |
+|       |        -----        |      |              |       |         -----         |      |
 
 --Cero a Uno (algunos la denominan como 1 a 1 opcional): cuando esta la posibilidad que uno de los lados no esté.
     Se representa igual que el de 1 a 1 pero con las lineas punteadas.
@@ -78,15 +53,15 @@ de entidad que una específica puede estar relacionada.
 --Uno a muchos (1 a N): Una entidad del conjunto de entidades A puede asociarse con más de una entidad del conjunto de entidades B, sin embargo, una entidad del conjunto de entidades B puede asociarse con, como máximo,a una entidad.
     Se reprentan:
 
-|       |        -----        |      |             |       |         -----         |      |
-| DUEÑO | -|---< TIENE >---<- | AUTO | ,o también, | DUEÑO | -||---< TIENE >---|<- | AUTO | , el |< significa que puede haber 1 o muchos.
-|       |        -----        |      |             |       |         -----         |      |
+|       |        -----        |      |              |       |         -----         |      |
+| DUEÑO | -|---< TIENE >---<- | AUTO | , o también, | DUEÑO | -||---< TIENE >---|<- | AUTO | , el |< significa que puede haber 1 o muchos.
+|       |        -----        |      |              |       |         -----         |      |
 
 --Muchos a muchos (N a N): Cuando en una tabla A puede estar conectado con muchos de la tabla B, y viceversa.
 
-|       |        -----        |      |             |       |         -----         |      |
-| DUEÑO | ->---< TIENE >---<- | AUTO | ,o también, | DUEÑO | ->|---< TIENE >---|<- | AUTO |
-|       |        -----        |      |             |       |         -----         |      |
+|       |        -----        |      |              |       |         -----         |      |
+| DUEÑO | ->---< TIENE >---<- | AUTO | , o también, | DUEÑO | ->|---< TIENE >---|<- | AUTO |
+|       |        -----        |      |              |       |         -----         |      |
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
@@ -145,3 +120,42 @@ DML trata del contenido de la base de datos. Son las siglas de Data Manipulation
 
 DELETE /= DROP
 Con delete borramos el contenido de la tabla, el drop elimina la tabla (o bd).
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+-SQL -> Relacional. Se representan con tablas (columnas y filas). Usadas para almacenar datos organizados. Estas tablas se relacionan entre sí
+a partir de keys.
+
+-NoSQL -> No Relacional. Son representados de diferentes formas (key-value, json, etc). Usados para almacenar datos que no requieren relacionarse,
+básicamente serían como un cajón donde solo se guardan los  datos y no se necesitan un orden. Son más flexibles, escalables y mayor rendimiento que 
+las relacionales (esto se debe a que las relacionales pesan más debido a las diferentes tablas que puede llegar a haber).
+
+SQL = Structured Query Language
+-Columna ID: el id es un número único generado automaticamente (autoincremental) para cada dato que se agrega a la tabla de datos, 
+es un identificador para el dato. Nos sirve para relacionar tablas.
+-Fila = Registro.
+
+-QUERY = Consulta / Petición -> Son aquellos 'pedidos' de datos realizados en los lenguajes hacia los RDM para hacer
+las operaciones queridas.
+Las consultas en una base de datos juegan un papel muy fundamental, puesto que facilitan de manera considerable los procesos en cualquier empresa.
+Estructura de una query básica: 
+    SELECT `columnas, funciones como COUNT, SUM, MAX, MIN o ¨*¨´ FROM `table´
+    WHERE `condicion´
+    GROUP BY `columna que se necesite agrupar´
+    ORDER BY `columna que se tenga que ordenar´ DESC/ASC
+    HAVING `condicion´ 
+
+
+Sentencia JOIN: Unificar tablas, a través de las claves foráneas.
+    Tenemos la tabla A y B. Su intersección es la conexión realizada por la Foreign Key.
+    LEFT JOIN -> A - B: trae todos los datos de A y la intersección con B.
+    RIGHT JOIN -> A - B: trae todos los datos de B y la intersección con A.
+    INNER JOIN -> A - B: trae los datos de la intersección.
+ 
+UNION: unificar ambas tablas, la suma.
+
+-ETL: La palabra ETL correspondería al acrónimo de: Extract (Extraer), Transform (Transformar), Load (Cargar).
+ETL hace parte del proceso de integración de datos, mas aun es un componente muy importante que completa el resultado final en la relación
+de aplicaciones y sistemas.
+
+---------------------------------------------------------------------------------------------------------------------------------------
