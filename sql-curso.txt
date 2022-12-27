@@ -1,4 +1,4 @@
--RDM = Relational Database Management System
+-RDM = Relational Database Management System.
 --Software que nos ayuda a manejar nuestra BD. Ej: MySQL, Postgres, etc.
 --Nos Facilitan la conección con los lenguajes de programación (php, python, js, etc).
 
