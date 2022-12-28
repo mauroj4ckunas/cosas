@@ -34,3 +34,23 @@ y hacer sentido de ellos para darles un uso.
     Esta minería se hace sobretodo porque es un gran cumulo de datos no relacionados ni normalizados.
     No es un sistema, son técnicas de busqueda de datos.
 
+ETL: La palabra ETL correspondería al acrónimo de: Extract (Extraer), Transform (Transformar), Load (Cargar).
+    Se utiliza en el Data Mining y se carga en un Data Warehouse.
+    Se basa en obtener información, aplicarle las técnicas de transformación para así guardar los datos que queremos.
+    ETL hace parte del proceso de integración de datos, mas aun es un componente muy importante que completa el resultado final en la relación
+    de aplicaciones y sistemas.
+
+BUSINESS INTELLIGENCE: Inteligencia de negocio, es una disciplina que trata de proveer los datos necesarios para la toma de decisiones.
+    Toma los datos obtenidos a través de los conceptos anteriores y al final se le aplica eficientemente en el negocio.
+    Su razón de ser es tener la información lista, clara y que tenga todos los elementos para tomar decisiones en una empresa.
+    Es necesario tener una buena sensibilidad por entender el negocio, sus necesidades y la información que puede llevar a tomar 
+    decisiones en el momento adecuado al momento de realizar business intelligence.
+
+MACHINE LEARNING: tratamiento de datos para encontrar cuestiones necesarias para el negocio.
+    Ayuda a crear un mapa o un modelo con la información obtenida para la toma de decisiones.
+    Busca los patrones que no son obvios para los humanos, las relaciones que pueden llegar a existir entre
+    todos los datos. Al final los clasifica para un mejor uso.
+    Utiliza BigQuery.
+
+DATA SCIENCE: es aplicar todas las técnicas de procesamiento de datos. 
+    En su manera más pura tiene que ver con gente con un background de estadísticas y ciencias duras.
