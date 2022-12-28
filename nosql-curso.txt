@@ -2,6 +2,8 @@
 básicamente serían como un cajón donde solo se guardan los  datos y no se necesitan un orden. Son más flexibles, escalables y mayor rendimiento que 
 las relacionales (esto se debe a que las relacionales pesan más debido a las diferentes tablas que puede llegar a haber).
 
+Se utiliza más que nada cuando la base de datos manejará tantos datos que haga que se atrase la bd relacional.
+
 Jerarquía de datos en firestore: Base de Datos -> Colección -> Documentos.
 
 Tipos de Base de Datos NO Relacionales:
@@ -10,3 +12,25 @@ Tipos de Base de Datos NO Relacionales:
     _Basadas en grafos: Ej: neo4j y TITAN.
     _En memoria: varia la estructura pero es muy rápida. Ej: Nencached y Redis.
     _Optimizadas para búsqueda: se pueden hacer Querys y búsquedas complejas de forma sencilla. Ej: BigQuery y Elasticsearch.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+CONCEPTOS:
+
+BIG DATA: manejo de un altísimo volumen de datos
+    Los DB Relacional no son efectivos con los big data, debido a la demora que tienen 
+    con el trabajo de estos datos.
+    La gran ventaja es la introducción y extracción rápida de datos.
+
+DATA WAREHOUSE: almacenes de datos.
+    Trata de un alto guardado de datos. A diferencia de big data es que este ultimo trata sobre
+    el manejo rápido del dato, el warehouse es sobre el ALTO almacenaje de datos.
+    Aquí se guardan los datos 'muertos', aquellos que no son usados en la actualidad de la aplicación 
+    pero no deben ser borrados.
+    Big Table: es una única gran tabla, guarda TODOS los datos.
+
+DATA MINING: se dedica a minar datos, a extraerlos de donde sea que estén (archivos muertos, base de datos actual, etc…) 
+y hacer sentido de ellos para darles un uso.
+    Esta minería se hace sobretodo porque es un gran cumulo de datos no relacionados ni normalizados.
+    No es un sistema, son técnicas de busqueda de datos.
+
