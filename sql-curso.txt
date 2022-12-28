@@ -108,13 +108,15 @@ DDL = Data Definition Language.
 - Drop: Eliminar/Borrar.
 
 Una vista es una tabla virtual cuyo contenido está definido por una consulta. Al igual que una tabla, 
-una vista consta de un conjunto de columnas y filas de datos con un nombre. Sin embargo, a menos que esté indizada,
-una vista no existe como conjunto de valores de datos almacenados en una base de datos.
+una vista consta de un conjunto de columnas y filas de datos con un nombre.
 Las vistas existen para visualizar los datos de una consulta en la base de datos.
 
 DML trata del contenido de la base de datos. Son las siglas de Data Manipulation Language y sus comandos son:
 - Insert: Inserta o agrega nuevos registros a la tabla.
 - Update: Actualiza o modifica los datos que ya existen.
+    UPDATE nombre-de-la-tabla
+    SET nombre-de-la-columna = valor[, nombre-de-la-columna=valor]
+    [WHERE condición]
 - Delete: Esta sentencia es riesgosa porque puede borrar el contenido de una tabla.
 - Select: Trae información de la base de datos.
 
@@ -146,7 +148,11 @@ Sentencia JOIN: Unificar tablas, a través de las claves foráneas.
     LEFT JOIN -> A - B: trae todos los datos de A y la intersección con B.
     RIGHT JOIN -> A - B: trae todos los datos de B y la intersección con A.
     INNER JOIN -> A - B: trae los datos de la intersección.
- 
+    
+    SELECT `columnas de A y B´
+    FROM A
+    `INNER, LEFT o RIGHT´ JOIN B ON A.id = B.id
+
 UNION: unificar ambas tablas, la suma.
 
 Valores Nulos y No Nulos:
@@ -164,6 +170,19 @@ GROUP BY: agrupar una tabla con una condición.
     AVG: el promedio de una columna.
     SUM: trae la suma de una columna.
 
+    Se puede agrupar por más criterios, si no se puede por el primero, se hace por el segundo.
+    También se puede agregar el WHERE.
+
+ORDER BY: ordena las columnas según el criterio que se use.
+    ASC sirve para ordenar de forma ascendente.
+    DESC sirve para ordenar de forma descendente.
+    LIMIT se usa para limitar la cantidad de resultados que arroja el query.
+
+    SELECT `columnas´ FROM `datatable´
+    ORDER BY `columna a ordenar´ [ASC o DESC]
+    LIMIT `cantidad a traer´;
+
+    También se puede ordenar por más criterios, se ordena por el primero luego el segundo y así.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
