@@ -143,6 +143,20 @@ Estructura de una query básica:
     ORDER BY `columna que se tenga que ordenar´ DESC/ASC
     HAVING `condicion´ 
 
+    SELECT: Lo que quieres mostrar
+    FROM: De dónde voy a tomar los datos
+    WHERE: Los filtros de los datos que quieres mostrar
+    GROUP BY: Los rubros por los que me interesa agrupar la información
+    ORDER BY: El orden en que quiero presentar mi información
+    HAVING: Los filtros que quiero que mis datos agrupados tengan
+
+
+Querys anidados: cuidado con estas consultas porque pueden llegar a ser O(n**2)
+    SELECT * FROM (SELECT * FROM `tabla´ ...) as `nombre´
+    ...; 
+
+    ... = cualquier otra función de sql.
+
 Sentencia JOIN: Unificar tablas, a través de las claves foráneas.
     Tenemos la tabla A y B. Su intersección es la conexión realizada por la Foreign Key.
     LEFT JOIN -> A - B: trae todos los datos de A y la intersección con B.
