@@ -126,10 +126,6 @@ Con delete borramos el contenido de la tabla, el drop elimina la tabla (o bd).
 -SQL -> Relacional. Se representan con tablas (columnas y filas). Usadas para almacenar datos organizados. Estas tablas se relacionan entre sí
 a partir de keys.
 
--NoSQL -> No Relacional. Son representados de diferentes formas (key-value, json, etc). Usados para almacenar datos que no requieren relacionarse,
-básicamente serían como un cajón donde solo se guardan los  datos y no se necesitan un orden. Son más flexibles, escalables y mayor rendimiento que 
-las relacionales (esto se debe a que las relacionales pesan más debido a las diferentes tablas que puede llegar a haber).
-
 SQL = Structured Query Language
 -Columna ID: el id es un número único generado automaticamente (autoincremental) para cada dato que se agrega a la tabla de datos, 
 es un identificador para el dato. Nos sirve para relacionar tablas.
@@ -158,6 +154,18 @@ Valores Nulos y No Nulos:
     Con WHERE se verifica si un espacio está vacío o no así:
         WHERE `columna´ IS NULL -> con esta sentencia nos trae los registros vacíos.
         WHERE `columna´ IS NOT NULL -> con esta sentencia nos trae los registros no vacíos.
+
+GROUP BY: agrupar una tabla con una condición.
+    SELECT `columna a agrupar´, [COUNT(*), MAX(*), AVG(*), etc] AS `nombre cualquiera´ FROM `datatable´
+    GROUP BY `columna a agrupar´;
+
+    COUNT: cantidad de registros,
+    MAX, MIN: el maximo y minimo (respectivamente), de los registros en una columna (tipo numéricos),
+    AVG: el promedio de una columna.
+    SUM: trae la suma de una columna.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
 
 -ETL: La palabra ETL correspondería al acrónimo de: Extract (Extraer), Transform (Transformar), Load (Cargar).
 ETL hace parte del proceso de integración de datos, mas aun es un componente muy importante que completa el resultado final en la relación

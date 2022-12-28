@@ -1,0 +1,3 @@
+-NoSQL -> No Relacional. Son representados de diferentes formas (key-value, json, etc). Usados para almacenar datos que no requieren relacionarse,
+básicamente serían como un cajón donde solo se guardan los  datos y no se necesitan un orden. Son más flexibles, escalables y mayor rendimiento que 
+las relacionales (esto se debe a que las relacionales pesan más debido a las diferentes tablas que puede llegar a haber).
