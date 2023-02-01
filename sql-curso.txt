@@ -108,13 +108,15 @@ DDL = Data Definition Language.
 - Drop: Eliminar/Borrar.
 
 Una vista es una tabla virtual cuyo contenido está definido por una consulta. Al igual que una tabla, 
-una vista consta de un conjunto de columnas y filas de datos con un nombre. Sin embargo, a menos que esté indizada,
-una vista no existe como conjunto de valores de datos almacenados en una base de datos.
+una vista consta de un conjunto de columnas y filas de datos con un nombre.
 Las vistas existen para visualizar los datos de una consulta en la base de datos.
 
 DML trata del contenido de la base de datos. Son las siglas de Data Manipulation Language y sus comandos son:
 - Insert: Inserta o agrega nuevos registros a la tabla.
 - Update: Actualiza o modifica los datos que ya existen.
+    UPDATE nombre-de-la-tabla
+    SET nombre-de-la-columna = valor[, nombre-de-la-columna=valor]
+    [WHERE condición]
 - Delete: Esta sentencia es riesgosa porque puede borrar el contenido de una tabla.
 - Select: Trae información de la base de datos.
 
@@ -126,10 +128,6 @@ Con delete borramos el contenido de la tabla, el drop elimina la tabla (o bd).
 -SQL -> Relacional. Se representan con tablas (columnas y filas). Usadas para almacenar datos organizados. Estas tablas se relacionan entre sí
 a partir de keys.
 
--NoSQL -> No Relacional. Son representados de diferentes formas (key-value, json, etc). Usados para almacenar datos que no requieren relacionarse,
-básicamente serían como un cajón donde solo se guardan los  datos y no se necesitan un orden. Son más flexibles, escalables y mayor rendimiento que 
-las relacionales (esto se debe a que las relacionales pesan más debido a las diferentes tablas que puede llegar a haber).
-
 SQL = Structured Query Language
 -Columna ID: el id es un número único generado automaticamente (autoincremental) para cada dato que se agrega a la tabla de datos, 
 es un identificador para el dato. Nos sirve para relacionar tablas.
@@ -139,18 +137,37 @@ es un identificador para el dato. Nos sirve para relacionar tablas.
 las operaciones queridas.
 Las consultas en una base de datos juegan un papel muy fundamental, puesto que facilitan de manera considerable los procesos en cualquier empresa.
 Estructura de una query básica: 
-    SELECT `columnas, funciones como COUNT, SUM, MAX, MIN o ¨*¨´ FROM `table´
+    SELECT `columnas, funciones como COUNT, SUM, MAX, MIN o ¨*¨´ 
+    FROM `table´
     WHERE `condicion´
     GROUP BY `columna que se necesite agrupar´
     ORDER BY `columna que se tenga que ordenar´ DESC/ASC
     HAVING `condicion´ 
+
+    SELECT: Lo que quieres mostrar
+    FROM: De dónde voy a tomar los datos
+    WHERE: Los filtros de los datos que quieres mostrar
+    GROUP BY: Los rubros por los que me interesa agrupar la información
+    ORDER BY: El orden en que quiero presentar mi información
+    HAVING: Los filtros que quiero que mis datos agrupados tengan
+
+
+Querys anidados: cuidado con estas consultas porque pueden llegar a ser O(n**2)
+    SELECT * FROM (SELECT * FROM `tabla´ ...) as `nombre´
+    ...; 
+
+    ... = cualquier otra función de sql.
 
 Sentencia JOIN: Unificar tablas, a través de las claves foráneas.
     Tenemos la tabla A y B. Su intersección es la conexión realizada por la Foreign Key.
     LEFT JOIN -> A - B: trae todos los datos de A y la intersección con B.
     RIGHT JOIN -> A - B: trae todos los datos de B y la intersección con A.
     INNER JOIN -> A - B: trae los datos de la intersección.
- 
+    
+    SELECT `columnas de A y B´
+    FROM A
+    `INNER, LEFT o RIGHT´ JOIN B ON A.id = B.id
+
 UNION: unificar ambas tablas, la suma.
 
 Valores Nulos y No Nulos:
@@ -255,3 +272,28 @@ PRINCIPALES FUNCIONES:
 - RANK(): nos dice el lugar que ocupa de acuerdo a el orden de cada tupla, deja gaps entre los valores.
 - DENSE_RANK(): Es un rango mas denso que trata de eliminar los gaps que nos deja RANK.
 - PERCENT_RANK(): Categoriza de acuerdo a lugar que ocupa igual que los anteriores pero por porcentajes.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+GROUP BY: agrupar una tabla con una condición.
+    SELECT `columna a agrupar´, [COUNT(*), MAX(*), AVG(*), etc] AS `nombre cualquiera´ FROM `datatable´
+    GROUP BY `columna a agrupar´;
+
+    COUNT: cantidad de registros,
+    MAX, MIN: el maximo y minimo (respectivamente), de los registros en una columna (tipo numéricos),
+    AVG: el promedio de una columna.
+    SUM: trae la suma de una columna.
+
+    Se puede agrupar por más criterios, si no se puede por el primero, se hace por el segundo.
+    También se puede agregar el WHERE.
+
+ORDER BY: ordena las columnas según el criterio que se use.
+    ASC sirve para ordenar de forma ascendente.
+    DESC sirve para ordenar de forma descendente.
+    LIMIT se usa para limitar la cantidad de resultados que arroja el query.
+
+    SELECT `columnas´ FROM `datatable´
+    ORDER BY `columna a ordenar´ [ASC o DESC]
+    LIMIT `cantidad a traer´;
+
+    También se puede ordenar por más criterios, se ordena por el primero luego el segundo y así.
