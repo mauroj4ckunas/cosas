@@ -302,8 +302,9 @@ ORDER BY: ordena las columnas según el criterio que se use.
 Datos: 
 -Postgres: 
 -- :: representa a la función CAST
--- comodin = %
--La diferencia entre MAX y LIMIT: Limit usa la tabla entera y con max lo podemos separar en grupos.
+-- comodin = _ 
+-La diferencia entre MAX y LIMIT: Limit usa la tabla entera y con max lo podemos separar en subsets.
 -Enlos rangos hay que especificar el valor min, max y el delta.
 -Querys la latencia no es despreciable.
 -Los self join tiene mas de una limitante
+-Diferencia simetrica, elementos que no pertenecen a ambas tablas.
