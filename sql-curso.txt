@@ -299,8 +299,7 @@ ORDER BY: ordena las columnas según el criterio que se use.
     También se puede ordenar por más criterios, se ordena por el primero luego el segundo y así.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-Datos: 
--Postgres: 
+Postgres: 
 -- :: representa a la función CAST
 -- comodin = _ 
 -La diferencia entre MAX y LIMIT: Limit usa la tabla entera y con max lo podemos separar en subsets.
@@ -308,3 +307,20 @@ Datos:
 -Querys la latencia no es despreciable.
 -Los self join tiene mas de una limitante
 -Diferencia simetrica, elementos que no pertenecen a ambas tablas.
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+SQL SERVER: 
+- En los datos tipo date: MM-DD-AA, el mes iría primero.
+- Al crear una tabla, si queremos tener una clave primaria y una foranea debemos usar el comando:
+    CONSTRAINT pk_id PRIMARY KEY (id)
+    CONSTRAINT fk_grupoId PRIMARY KEY (grupoId)
+- El DISTINC va después del SELECT y sirve para seleccionar a las columnas pero sin repeticiones.
+- Si usamos la función MAX, MIN o SUM junto a GROUP BY, podemos traer los maximos, los minimos y la suma de las columnas especificadas.
+    SELECT 'columna1', MAX('columna2') FROM 'tabla' 
+    Aca nos trae la columna1 pero solamente con los maximos segun columna2.
+- AVG sirven para el promedio de una columna de numeros
+- COUNT sirve para contar los registros. Si se especifica un WHERE se puede contar la cantidad de cierto dato que querramos.
+- HAVING trabaja con un GROUP BY porque filtra según registros agrupados. Tambien se podrá usar funciones como COUNT().
+-% el caracter comodin se utiliza mucho en la sentencia LIKE para buscar los digitos puestos. El comodin sirve para que la funcion
+no busque la palabra literal escrita sino que ademas busque si algun registro posee esa palabra.
