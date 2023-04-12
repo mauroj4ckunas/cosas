@@ -324,3 +324,9 @@ SQL SERVER:
 - HAVING trabaja con un GROUP BY porque filtra según registros agrupados. Tambien se podrá usar funciones como COUNT().
 -% el caracter comodin se utiliza mucho en la sentencia LIKE para buscar los digitos puestos. El comodin sirve para que la funcion
 no busque la palabra literal escrita sino que ademas busque si algun registro posee esa palabra.
+
+Store Procedure: serían como funciones. Cumplen un procedimiento con un objetivo definido.
+    - QUERY -> CREATE PROC 'nombre de la funcion' (
+                    @variable1 'tipo de dato', @variable2 'tipo de dato', ... , @variableN 'tipo de dato'
+               )
+               AS 'query a seguir';

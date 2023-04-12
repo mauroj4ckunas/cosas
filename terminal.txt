@@ -1,0 +1,9 @@
+¿Qué es la terminal?
+La terminal es un programa que ejecuta líneas de comandos, que a su vez estas líneas de comando ejecutan acciones y aquí tienes que aprender dos conceptos: terminal y shell.
+
+Terminal: es otra ventana más, es un programa, una interfaz que recibe un comando para luego pasárselo a la shell y que esta última la ejecute. Con este programa podemos hacer todo lo que el sistema de carpetas e interfaz gráfica del sistema operativo puede hacer, pero utilizando comandos.
+
+Shell: la terminal no ejecuta líneas de código, solo la recibe, es la shell quien hace todo el proceso de tomar el comando, ir con el procesador y la memoria RAM y decirles “tomen, ejecuten esto”.
+    Si lo pensamos de otra forma, la shell nos proporciona una forma de comunicarnos con el procesador y la RAM sin tener que pasar por la interfaz gráfica.
+
+
