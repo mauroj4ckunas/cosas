@@ -9,3 +9,29 @@ Los índices son construidos sobre árboles B, B+, B* o sobre una mezcla de ello
 El forzado de indices sólo debe usarse en casos aislados como migraciones o carga de datos.
 WITH(INDEX([indexname])), para forzar el uso de un indice en particular.
 
+STORED PROCEDURES: funciones del lado de la base de datos. Nos permite crear consultas frecuentes, hacer una rutina (routines)
+                  que haga dicha consulta.
+
+    Sintaxis:
+
+´
+    DELIMITER //
+    CREATE PROCEDURE nombre_procedimiento (parametro tipo_dato)
+    BEGIN
+    -- Cuerpo del procedimiento
+    END;
+´
+Ejemplo:
+´
+    CREATE PROCEDURE buscar_usuarios_por_nombre (IN nombre VARCHAR(50))
+    BEGIN
+    SELECT * FROM usuarios WHERE nombre = nombre;
+    END;
+´
+Y para llamarlo:
+´
+    CALL buscar_usuarios_por_nombre('Juan');
+´
+
+PREPARED STATEMENTS: En un procedimiento almacenado también podemos tener consultas preparadas. 
+                    Esto nos permite tener una cadena de texto con código SQL que podremos ejecutar.
