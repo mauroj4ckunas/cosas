@@ -21,7 +21,7 @@ STORED PROCEDURES: funciones del lado de la base de datos. Nos permite crear con
     -- Cuerpo del procedimiento
     END;
 ´
-Ejemplo:
+Ejemplo en MySQL/MariaDB:
 ´
     CREATE PROCEDURE buscar_usuarios_por_nombre (IN nombre VARCHAR(50))
     BEGIN
@@ -36,3 +36,24 @@ Y para llamarlo:
 PREPARED STATEMENTS: En un procedimiento almacenado también podemos tener consultas preparadas. 
                     Esto nos permite tener una cadena de texto con código SQL que podremos ejecutar.
                     Se utiliza junto a variables y al metodo CONCAT();
+
+TRIGGERS: eventos dentro de la base de datos. Son similares a los STORED PROCEDURES pero con la diferencia de que
+         estos se ejecutan cuando ocurre un evento.
+         Palabras clave:
+         -NEW: accedemos a los datos nuevos insertados.
+         -OLD: los datos que serán reemplazados.
+    
+    Ejemplo en MySQL/MariaDB:
+        "
+        CREATE TRIGGER calcular_total_venta AFTER INSERT ON ventas
+        FOR EACH ROW
+        BEGIN
+            DECLARE total DECIMAL(10,2);
+            SET total = NEW.cantidad * NEW.precio_unitario;
+            INSERT INTO registros_ventas (id_venta, total) VALUES (NEW.id, total);
+        END;
+        "
+
+    --En AFTER puede estar el BEFORE (after es luego que se realice la acción y before es antes que se haga).
+    --En INSERT puede ser cualquier tipo de acción de sql (insert, update, delete, etc).
+    --En new puede estar el old, y representa al nuevo dato y al viejo.
