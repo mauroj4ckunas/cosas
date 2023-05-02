@@ -35,3 +35,4 @@ Y para llamarlo:
 
 PREPARED STATEMENTS: En un procedimiento almacenado también podemos tener consultas preparadas. 
                     Esto nos permite tener una cadena de texto con código SQL que podremos ejecutar.
+                    Se utiliza junto a variables y al metodo CONCAT();
